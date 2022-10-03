@@ -28,6 +28,5 @@ export const useGetBreaches = (value: string) => {
   const [load, { called, loading, data, error }] = useLazyQuery(GET_BREACH, {
     variables: { domain: value },
   });
-  console.log({ value, data: data?.breaches })
   return { data: data?.breaches, loading, error, called, load };
 }

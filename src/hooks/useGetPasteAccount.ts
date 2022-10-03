@@ -17,6 +17,5 @@ export const useGetPasteAccount = (value: string) => {
   const [load, { called, loading, data, error }] = useLazyQuery(GET_BREACH, {
     variables: { email: value },
   });
-  console.log({ value, data: data?.pasteAccount })
   return { data: data?.pasteAccount, loading, error, called, load };
 }

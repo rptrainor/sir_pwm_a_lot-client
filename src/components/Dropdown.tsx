@@ -6,12 +6,9 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 import styles from '@/styles/Home.module.css'
+import handleSelectChange from '../utils/handle-select-change';
 
 const Dropdown = () => {
-  const handleSelectChange = (value: string) => {
-    document.location.href = value
-  }
-
   return (
     <div className={styles.dropdown}>
       <Box sx={{ minWidth: 120 }}>
