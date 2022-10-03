@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import InputBase from '@mui/material/InputBase';
 var sha1 = require('sha1');
 
 import { useGetPwnedPasswords } from '../hooks';
@@ -22,8 +23,10 @@ const PwnedPasswordsComponent: React.FC = () => {
       <h3>Enter the first 5 characters of a SHA-1 password hash to check if the password has been pwned</h3>
       <div>
         <label htmlFor="password">Password:&nbsp;</label>
-        <input
+        <InputBase
+          name='password'
           type='password'
+          style={{ backgroundColor: 'white', height: '30px', width: '300px', borderRadius: '5px', paddingLeft: '5px' }}
           value={password}
           onChange={(event) => setPassword(event?.target?.value)}
           onBlur={() => setValue(sha1(password).slice(0, 5))}

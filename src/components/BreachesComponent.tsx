@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import InputBase from '@mui/material/InputBase';
 
 import { useGetBreaches } from '../hooks';
 import shieldImg from '../../public/lancealot.png';
@@ -21,9 +22,10 @@ const BreachesComponent: React.FC = () => {
       <h3>Enter a domain to search for breaches that have occurred on that domain</h3>
       <div>
         <label htmlFor="domain">Domain:&nbsp;</label>
-        <input
+        <InputBase
           name='domain'
           type='text'
+          style={{ backgroundColor: 'white', height: '30px', width: '300px', borderRadius: '5px', paddingLeft: '5px' }}
           value={domain}
           onChange={(event) => setDomain(event?.target?.value)}
           onBlur={() => setValue(domain)}

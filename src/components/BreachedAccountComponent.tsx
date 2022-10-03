@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import InputBase from '@mui/material/InputBase';
 
 import { useGetBreachedAccount } from '../hooks';
 import shieldImg from '../../public/lancealot.png';
@@ -21,9 +22,10 @@ const BreachedAccountComponent: React.FC = () => {
       <h3>Enter an email address to check if it has been breached</h3>
       <div>
         <label htmlFor="email">Email:&nbsp;</label>
-        <input
+        <InputBase
           name='email'
           type='text'
+          style={{ backgroundColor: 'white', height: '30px', width: '300px', borderRadius: '5px', paddingLeft: '5px' }}
           value={email}
           onChange={(event) => setEmail(event?.target?.value)}
           onBlur={() => setValue(email)}

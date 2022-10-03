@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-var sha1 = require('sha1');
+import InputBase from '@mui/material/InputBase';
 
 import { useGetPasteAccount } from '../hooks';
 import shieldImg from '../../public/lancealot.png';
@@ -22,12 +22,13 @@ const PasteAccountComponent: React.FC = () => {
       <h3>Enter an email address to check if it has been used in a paste</h3>
       <div>
         <label htmlFor="email">Email:&nbsp;</label>
-        <input
+        <InputBase
           name='email'
           type='email'
+          style={{ backgroundColor: 'white', height: '30px', width: '300px', borderRadius: '5px', paddingLeft: '5px' }}
           value={email}
           onChange={(event) => setEmail(event?.target?.value)}
-          onBlur={() => setValue(sha1(email).slice(0, 5))}
+          onBlur={() => setValue(email)}
         />
       </div>
       <br />

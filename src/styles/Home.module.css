@@ -11,3 +11,13 @@
   justify-content: center;
   align-items: center;
 }
+
+.allign_left_box {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  overflow-y: auto;
+}
