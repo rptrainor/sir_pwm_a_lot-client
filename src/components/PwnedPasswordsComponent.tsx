@@ -3,8 +3,10 @@ import Image from 'next/image';
 import InputBase from '@mui/material/InputBase';
 var sha1 = require('sha1');
 
+import styles from '@/styles/Home.module.css'
 import { useGetPwnedPasswords } from '../hooks';
 import shieldImg from '../../public/lancealot.png';
+import { style } from '@mui/system';
 
 const PwnedPasswordsComponent: React.FC = () => {
   const [password, setPassword] = React.useState('')
@@ -33,10 +35,10 @@ const PwnedPasswordsComponent: React.FC = () => {
         />
       </div>
       <br />
-      {data && <p>{JSON.stringify(data)}</p>}
       <button onClick={() => load()}>
         Submit
       </button>
+      {data && <p className={styles.ow}>{JSON.stringify(data)}</p>}
     </>
   );
 }

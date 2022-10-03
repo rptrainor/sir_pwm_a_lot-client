@@ -36,9 +36,9 @@ const BreachComponent: React.FC = () => {
       <button onClick={() => load()}>
         Submit
       </button>
+      {data && <h3>Breach Details</h3>}
       {data && (
         <div className={styles.allign_left_box}>
-          {<p>Breach Details</p>}
           {data?.LogoPath && <img src={data.LogoPath} width='100' height='100' />}
           {data?.Name && <p>{`Name: ${data.Name}`}</p>}
           {data?.Title && <p>{`Title: ${data.Title}`}</p>}
@@ -56,8 +56,8 @@ const BreachComponent: React.FC = () => {
           {data?.IsMalware !== null && <p>{`Is Malware: ${new Boolean(data.IsMalware)}`}</p>}
           {data?.DataClasses && <React.Fragment>
             <p>Data Classes:</p>
-            {(data.DataClasses as string[]).map((dataClass, index) => (<p key={dataClass}>&nbsp;&nbsp;&nbsp;{dataClass}</p>))}
-            </React.Fragment>}
+            {(data.DataClasses as string[])?.map((dataClass, index) => (<p key={dataClass}>&nbsp;&nbsp;&nbsp;{dataClass}</p>))}
+          </React.Fragment>}
         </div>
       )}
     </>

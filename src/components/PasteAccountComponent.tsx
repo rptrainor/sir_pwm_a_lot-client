@@ -2,8 +2,17 @@ import React from 'react';
 import Image from 'next/image';
 import InputBase from '@mui/material/InputBase';
 
+import styles from '@/styles/Home.module.css'
 import { useGetPasteAccount } from '../hooks';
 import shieldImg from '../../public/lancealot.png';
+
+export type Paste = {
+  Id: string
+  Source: string
+  Title: string
+  Date: string
+  EmailCount: number
+}
 
 const PasteAccountComponent: React.FC = () => {
   const [email, setEmail] = React.useState('')
@@ -35,7 +44,16 @@ const PasteAccountComponent: React.FC = () => {
       <button onClick={() => load()}>
         Submit
       </button>
-      {data && <p>{JSON.stringify(data)}</p>}
+      {data && <h3>Paste Details</h3>}
+      {data && (data as Paste[])?.map((item) => (
+        <div className={styles.allign_left_box} key={item?.Id}>
+          {item?.Id && <p><b>Paste ID:</b> {item?.Id}</p>}
+          {item?.Source && <p><b>Source:</b> {item?.Source}</p>}
+          {item?.Title && <p><b>Title:</b> {item?.Title}</p>}
+          {item?.Date && <p><b>Date:</b> {item?.Date}</p>}
+          {item?.EmailCount && <p><b>Email Count:</b> {item?.EmailCount}</p>}
+        </div>
+      ))}
     </>
   );
 }

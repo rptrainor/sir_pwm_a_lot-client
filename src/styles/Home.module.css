@@ -21,3 +21,11 @@
   align-items: left;
   overflow-y: auto;
 }
+
+.ow {
+  width: 100%;
+  max-width: 600px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: none;
+}
