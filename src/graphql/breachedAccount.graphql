@@ -1,0 +1,26 @@
+query($email: String!) {
+  breachedAccount(email: $email) {
+    Name,
+    Title,
+    Domain,
+    BreachDate,
+    AddedDate,
+    ModifiedDate,
+    PwnCount,
+    Description,
+    LogoPath,
+    DataClasses,
+    IsVerified,
+    IsFabricated,
+    IsSensitive,
+    IsRetired,
+    IsSpamList,
+    IsMalware
+  }
+}
+
+    # Source,
+    # Id,
+    # Title,
+    # Date,
+    # EmailCount

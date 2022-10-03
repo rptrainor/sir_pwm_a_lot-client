@@ -1,0 +1,20 @@
+query($name: String!) {
+  breach(name: $name) {
+    Name,
+    Title,
+    Domain,
+    BreachDate,
+    AddedDate,
+    ModifiedDate,
+    PwnCount,
+    Description,
+    LogoPath,
+    DataClasses,
+    IsVerified,
+    IsFabricated,
+    IsSensitive,
+    IsRetired,
+    IsSpamList,
+    IsMalware
+  }
+}

@@ -1,0 +1,9 @@
+query($email: String!) {
+  pasteAccount(email: $email) {
+    Source,
+    Id,
+    Title,
+    Date,
+    EmailCount
+  }
+}
