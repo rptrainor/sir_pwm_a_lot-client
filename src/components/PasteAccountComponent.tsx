@@ -5,6 +5,7 @@ import InputBase from '@mui/material/InputBase';
 import styles from '@/styles/Home.module.css'
 import { useGetPasteAccount } from '../hooks';
 import shieldImg from '../../public/lancealot.png';
+import Dropdown from './Dropdown';
 
 export type Paste = {
   Id: string
@@ -28,6 +29,7 @@ const PasteAccountComponent: React.FC = () => {
         width={125}
         height={125}
       />
+      <Dropdown />
       <h3>Enter an email address to check if it has been used in a paste</h3>
       <div>
         <label htmlFor="email">Email:&nbsp;</label>

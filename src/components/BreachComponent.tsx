@@ -5,6 +5,7 @@ import InputBase from '@mui/material/InputBase';
 import styles from '@/styles/Home.module.css'
 import { useGetBreach } from '../hooks';
 import shieldImg from '../../public/lancealot.png';
+import Dropdown from './Dropdown';
 
 const BreachComponent: React.FC = () => {
   const [name, setName] = React.useState('')
@@ -20,6 +21,7 @@ const BreachComponent: React.FC = () => {
         width={125}
         height={125}
       />
+      <Dropdown />
       <h3>Enter a breach name to get details about that breach</h3>
       <div>
         <label htmlFor="name">Breach Name:&nbsp;</label>

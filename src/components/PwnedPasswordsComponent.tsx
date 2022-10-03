@@ -6,7 +6,7 @@ var sha1 = require('sha1');
 import styles from '@/styles/Home.module.css'
 import { useGetPwnedPasswords } from '../hooks';
 import shieldImg from '../../public/lancealot.png';
-import { style } from '@mui/system';
+import Dropdown from './Dropdown';
 
 const PwnedPasswordsComponent: React.FC = () => {
   const [password, setPassword] = React.useState('')
@@ -22,6 +22,7 @@ const PwnedPasswordsComponent: React.FC = () => {
         width={125}
         height={125}
       />
+      <Dropdown />
       <h3>Enter the first 5 characters of a SHA-1 password hash to check if the password has been pwned</h3>
       <div>
         <label htmlFor="password">Password:&nbsp;</label>

@@ -7,6 +7,7 @@ import { useGetBreaches } from '../hooks';
 import shieldImg from '../../public/lancealot.png';
 
 import { Breach } from './BreachedAccountComponent';
+import Dropdown from './Dropdown';
 
 const BreachesComponent: React.FC = () => {
   const [domain, setDomain] = React.useState('')
@@ -22,6 +23,7 @@ const BreachesComponent: React.FC = () => {
         width={125}
         height={125}
       />
+      <Dropdown />
       <h3>Enter a domain to search for breaches that have occurred on that domain</h3>
       <div>
         <label htmlFor="domain">Domain:&nbsp;</label>

@@ -3,7 +3,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import styles from '@/styles/Home.module.css'
-import App from '@/components/AppComponent';
+import BreachedAccountComponent from '@/components/BreachedAccountComponent';
 
 const HomePage: NextPage = () => {
   return (
@@ -14,7 +14,7 @@ const HomePage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <App />
+        <BreachedAccountComponent />
       </main>
     </div>
   )
