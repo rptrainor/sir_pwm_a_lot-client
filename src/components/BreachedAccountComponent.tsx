@@ -6,6 +6,7 @@ import styles from '@/styles/Home.module.css'
 import { useGetBreachedAccount } from '../hooks';
 import shieldImg from '../../public/lancealot.png';
 import Dropdown from './Dropdown';
+import isEmailValid from '../utils/is-email-valid';
 
 export type Breach = {
   Name: string
@@ -29,8 +30,13 @@ export type Breach = {
 const BreachedAccountComponent: React.FC = () => {
   const [email, setEmail] = React.useState('')
   const [value, setValue] = React.useState('')
+  const [validEmail, setValidEmail] = React.useState(true)
+
   const { data, load } = useGetBreachedAccount(value)
 
+  React.useEffect(() => {
+    isEmailValid(email) ? setValidEmail(true) : setValidEmail(false)
+  }, [email])
   return (
     <>
       <h1>{'Sir Pwn-A-Lot'}</h1>
@@ -53,6 +59,7 @@ const BreachedAccountComponent: React.FC = () => {
           onBlur={() => setValue(email)}
         />
       </div>
+      {(validEmail || !email.length) ? null : <span style={{ color: 'red' }}>Please enter a valid email address</span>}
       <br />
       <button onClick={() => load()}>
         Submit
