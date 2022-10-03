@@ -3,9 +3,9 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import styles from '@/styles/Home.module.css'
-import App from '@/components/AppComponent';
+import PwnedPasswords from '@/components/PwnedPasswordsComponent';
 
-const HomePage: NextPage = () => {
+const PwnedPasswordsPage: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -14,10 +14,10 @@ const HomePage: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <App />
+        <PwnedPasswords />
       </main>
     </div>
   )
 }
 
-export default HomePage
+export default PwnedPasswordsPage
