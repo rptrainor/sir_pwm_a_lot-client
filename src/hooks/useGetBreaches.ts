@@ -2,8 +2,8 @@ import { useLazyQuery } from '@apollo/client';
 import { gql } from '@apollo/client'
 
 const GET_BREACH = gql`
-  query($name: String!) {
-    breach(name: $name) {
+  query($domain: String!) {
+    breaches(domain: $domain) {
       Name,
       Title,
       Domain,
@@ -24,10 +24,10 @@ const GET_BREACH = gql`
   }
 `;
 
-export const useGetBreach = (value: string) => {
+export const useGetBreaches = (value: string) => {
   const [load, { called, loading, data, error }] = useLazyQuery(GET_BREACH, {
-    variables: { name: value },
+    variables: { domain: value },
   });
-  console.log({ value, data: data?.breach })
-  return { data: data?.breach, loading, error, called, load };
+  console.log({ value, data: data?.breaches })
+  return { data: data?.breaches, loading, error, called, load };
 }

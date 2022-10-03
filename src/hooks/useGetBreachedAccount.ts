@@ -25,10 +25,9 @@ const GET_BREACH = gql`
 `;
 
 export const useGetBreachedAccount = (value: string) => {
-  const [loadBreachedAccount, { called, loading, data, error }] = useLazyQuery(GET_BREACH, {
+  const [load, { called, loading, data, error }] = useLazyQuery(GET_BREACH, {
     variables: { email: value },
   });
   console.log({ value, data: data?.breachedAccount })
-
-  return { data: data?.breachedAccount, loading, error, called, loadBreachedAccount };
+  return { data: data?.breachedAccount, loading, error, called, load };
 }

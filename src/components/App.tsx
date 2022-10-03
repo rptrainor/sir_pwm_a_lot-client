@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { useGetBreach } from '../hooks/';
+import { useGetPasteAccount } from '../hooks/';
 
 const App: React.FC = () => {
   const [email, setEmail] = React.useState('')
   const [value, setValue] = React.useState('')
-  const { data, loadBreach } = useGetBreach(value)
+  const { data, load } = useGetPasteAccount(value)
 
   return (
     <>
@@ -17,7 +17,7 @@ const App: React.FC = () => {
         onBlur={() => setValue(email)}
       />
       {data && <p>{JSON.stringify(data)}</p>}
-      <button onClick={() => loadBreach()}>
+      <button onClick={() => load()}>
         Submit!
       </button>
     </>
