@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import InputBase from '@mui/material/InputBase';
+import Button from '@mui/material/Button';
 var sha1 = require('sha1');
 
 import styles from '@/styles/Home.module.css'
@@ -36,9 +37,9 @@ const PwnedPasswordsComponent: React.FC = () => {
         />
       </div>
       <br />
-      <button onClick={() => load()}>
+      <Button variant="contained" onClick={() => load()}>
         Submit
-      </button>
+      </Button>
       {data && <p className={styles.ow}>{JSON.stringify(data)}</p>}
     </>
   );

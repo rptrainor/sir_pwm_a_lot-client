@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import InputBase from '@mui/material/InputBase';
+import Button from '@mui/material/Button';
 
 import styles from '@/styles/Home.module.css'
 import { useGetBreachedAccount } from '../hooks';
@@ -61,9 +62,9 @@ const BreachedAccountComponent: React.FC = () => {
       </div>
       {(validEmail || !email.length) ? null : <span style={{ color: 'red' }}>Please enter a valid email address</span>}
       <br />
-      <button onClick={() => load()}>
+      <Button variant="contained" onClick={() => load()}>
         Submit
-      </button>
+      </Button>
       {data && <h3>Breach Details</h3>}
       {data && (data as Breach[])?.map((item, index) => (
         <div key={index} className={styles.allign_left_box}>
