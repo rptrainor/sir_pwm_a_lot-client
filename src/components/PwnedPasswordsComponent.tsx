@@ -24,7 +24,7 @@ const PwnedPasswordsComponent: React.FC = () => {
         height={125}
       />
       <Dropdown />
-      <h3>Enter the first 5 characters of a SHA-1 password hash to check if the password has been pwned</h3>
+      <h3>Enter a password to check if the password has been pwned</h3>
       <div>
         <label htmlFor="password">Password:&nbsp;</label>
         <InputBase
